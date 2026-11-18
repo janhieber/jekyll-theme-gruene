@@ -9,7 +9,7 @@ Ein schlichtes Jekyll-Theme für Orts- und Kreisverbände – mit News und Termi
 ## Einbinden (als Git-Submodule)
 
 ```sh
-git submodule add https://github.com/CHANGEME/gruene-theme _theme
+git submodule add https://github.com/janhieber/jekyll-theme-gruene _theme
 ```
 
 `Gemfile`:
@@ -17,7 +17,7 @@ git submodule add https://github.com/CHANGEME/gruene-theme _theme
 ```ruby
 source "https://rubygems.org"
 gem "jekyll", "~> 4.3"
-gem "gruene-theme", path: "_theme"
+gem "jekyll-theme-gruene", path: "_theme"
 ```
 
 `_config.yml`:
@@ -41,6 +41,7 @@ exclude: [_theme, Gemfile, Gemfile.lock, vendor, README.md]
 
 # Pflicht – wird von Jekyll nicht aus dem Theme übernommen:
 permalink: /news/:year/:month/:title/
+future: true   # sonst werden Termine mit Datum in der Zukunft nicht erzeugt
 
 collections:
   termine:
@@ -143,3 +144,7 @@ Die Seite sollte daher regelmäßig (z. B. täglich per GitHub Action / Cronjob)
 ## Lizenz
 
 Code: MIT. Gilt nicht für Logos, Schriften oder Bilder der Partei.
+
+## Credits
+Dieses Theme wurde inspiriert von https://gruene-filderstadt.de.  
+Erstellt mit Hilfe von Claude Opus 5.5.

@@ -63,8 +63,7 @@ h1, h2, h3 { line-height: 1.2; color: var(--tanne); }
 /* Hero */
 .hero {
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, 0) 35%),
-    linear-gradient(90deg, rgba(0, 84, 55, .75), rgba(0, 84, 55, 0) 70%),
+    linear-gradient(180deg, rgba(0, 137, 57, .45) 0%, rgba(0, 0, 0, 0) 35%),
     var(--hero-image, linear-gradient(135deg, var(--klee), var(--tanne))) center / cover no-repeat;
   background-color: var(--tanne);
   color: #fff; padding: 5rem 0;
