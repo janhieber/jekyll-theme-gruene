@@ -12,6 +12,9 @@
   {% include head-custom.html %}
 </head>
 <body{% if page.layout == "home" %} class="home"{% endif %}>
+  {%- if site.banner %}
+  <div class="site-banner" role="note">{{ site.banner | markdownify | remove: "<p>" | remove: "</p>" | strip }}</div>
+  {%- endif %}
   {% include header.html %}
   <main>
     {{ content }}
