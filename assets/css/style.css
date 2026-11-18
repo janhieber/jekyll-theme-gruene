@@ -33,7 +33,7 @@ h1, h2, h3 { line-height: 1.2; color: var(--tanne); }
 /* Header */
 .site-banner {
   position: relative; z-index: 20;
-  background: var(--sonne); color: var(--tanne);
+  background: var(--sonne); color: #a81d1d;
   padding: .6rem 1.25rem; text-align: center; font-weight: 700; font-size: .95rem; line-height: 1.4;
 }
 .site-banner a { color: inherit; }
