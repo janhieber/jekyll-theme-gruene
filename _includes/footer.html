@@ -1,0 +1,21 @@
+{%- assign nav = site.data.navigation | default: site.navigation -%}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <nav>
+      {%- for item in nav.main -%}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+    <div class="social">
+      {%- if site.instagram and site.instagram != "" -%}<a href="{{ site.instagram }}">Instagram</a>{%- endif -%}
+      {%- if site.facebook and site.facebook != "" -%}<a href="{{ site.facebook }}">Facebook</a>{%- endif -%}
+      {%- if site.mastodon and site.mastodon != "" -%}<a href="{{ site.mastodon }}" rel="me">Mastodon</a>{%- endif -%}
+    </div>
+    <nav class="legal">
+      {%- for item in nav.footer -%}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+    <p class="copy">© {{ site.time | date: "%Y" }} {{ site.title }} – Alle Rechte vorbehalten.</p>
+  </div>
+</footer>

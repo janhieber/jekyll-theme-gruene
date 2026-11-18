@@ -1,0 +1,23 @@
+{%- assign post = include.post -%}
+{%- assign _now = site.time | date: "%s" | plus: 0 -%}
+{%- assign _then = post.date | date: "%s" | plus: 0 -%}
+{%- assign _days = _now | minus: _then | divided_by: 86400 -%}
+<article class="news-card{% unless post.image %} no-image{% endunless %}">
+  <a class="news-card-overlay" href="{{ post.url | relative_url }}" aria-hidden="true" tabindex="-1"></a>
+  <div class="news-card-image">
+    {%- if post.image -%}<img src="{{ post.image | relative_url }}" alt="" loading="lazy">{%- endif -%}
+  </div>
+  <div class="news-card-body">
+    {%- if post.category -%}<span class="news-card-tag">{{ post.category }}</span>{%- endif -%}
+    <a class="news-card-link" href="{{ post.url | relative_url }}">
+      <h3>{{ post.title }}</h3>
+      <time datetime="{{ post.date | date_to_xmlschema }}">—
+        {%- if _days < 1 %} heute
+        {%- elsif _days == 1 %} gestern
+        {%- elsif _days < 30 %} vor {{ _days }} Tagen
+        {%- else %} {% include date-de.html date=post.date %}
+        {%- endif -%}
+      </time>
+    </a>
+  </div>
+</article>

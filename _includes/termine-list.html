@@ -1,0 +1,23 @@
+{%- comment -%}
+  Parameter: upcoming=true|false, limit=Zahl
+  Hinweis: "kommend" wird zum Zeitpunkt des Builds berechnet.
+{%- endcomment -%}
+{%- assign now = site.time | date: "%s" | plus: 0 -%}
+{%- assign sorted = site.termine | default: empty | sort: "datum" -%}
+{%- if include.upcoming == false -%}{%- assign sorted = sorted | reverse -%}{%- endif -%}
+{%- assign count = 0 -%}
+{%- assign limit = include.limit | default: 1000 -%}
+<ul class="termine-list">
+  {%- for t in sorted -%}
+    {%- assign ts = t.datum | date: "%s" | plus: 0 -%}
+    {%- if include.upcoming == false -%}
+      {%- if ts >= now -%}{%- continue -%}{%- endif -%}
+    {%- else -%}
+      {%- if ts < now -%}{%- continue -%}{%- endif -%}
+    {%- endif -%}
+    {%- if count >= limit -%}{%- break -%}{%- endif -%}
+    {%- include termin-item.html termin=t -%}
+    {%- assign count = count | plus: 1 -%}
+  {%- endfor -%}
+</ul>
+{%- if count == 0 -%}<p class="empty">Aktuell sind keine Termine eingetragen.</p>{%- endif -%}

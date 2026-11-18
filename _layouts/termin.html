@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="page-head">
+  <div class="container">
+    <span class="tag">Termin</span>
+    <h1>{{ page.title }}</h1>
+  </div>
+</div>
+<article class="container content">
+  <dl class="termin-meta">
+    <dt>Wann</dt>
+    <dd>{% include date-de.html date=page.datum %}, {{ page.datum | date: "%H:%M" }} Uhr{% if page.ende %} bis {{ page.ende }} Uhr{% endif %}</dd>
+    {%- if page.ort -%}<dt>Wo</dt><dd>{{ page.ort }}</dd>{%- endif -%}
+  </dl>
+  {{ content }}
+  <p><a class="btn-outline" href="{{ '/termine/' | relative_url }}">← Alle Termine</a></p>
+</article>

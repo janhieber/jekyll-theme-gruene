@@ -1,0 +1,14 @@
+# Standardwerte des Themes. Alles kann in der _config.yml der Website überschrieben werden.
+# Hinweis: collections, defaults und permalink werden von Jekyll hier NICHT übernommen
+# und müssen in der _config.yml der Website stehen (siehe README).
+
+lang: de
+
+# Fallback, falls die Website keine _data/navigation.yml hat
+navigation:
+  main:
+    - { title: News, url: /news/ }
+    - { title: Termine, url: /termine/ }
+  footer:
+    - { title: Impressum, url: /impressum/ }
+    - { title: Datenschutz, url: /datenschutz/ }

@@ -1,0 +1,9 @@
+---
+layout: page
+---
+{{ content }}
+<h2>Kommende Termine</h2>
+{% include termine-list.html upcoming=true %}
+
+<h2>Vergangene Termine</h2>
+{% include termine-list.html upcoming=false limit=10 %}

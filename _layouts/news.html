@@ -1,0 +1,9 @@
+---
+layout: page
+---
+{{ content }}
+<div class="news-grid">
+  {%- for post in site.posts -%}
+    {% include news-card.html post=post %}
+  {%- endfor -%}
+</div>

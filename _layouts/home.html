@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{%- assign hero_image = page.hero_image | default: site.hero_image -%}
+<section class="hero"{% if hero_image %} style="--hero-image: url('{{ hero_image | relative_url }}')"{% endif %}>
+  <div class="container">
+    <h1 class="hero-title">
+      <span class="hero-line hero-line-1"><span>{{ page.hero_line1 | default: "Herzlich" }}</span></span>
+      <span class="hero-line hero-line-2"><span>{{ page.hero_line2 | default: "willkommen!" }}</span></span>
+    </h1>
+    {%- if page.hero_text %}
+    <p>{{ page.hero_text }}</p>
+    {%- endif %}
+    {%- if page.hero_button %}
+    <a class="btn" href="{{ page.hero_button.url | relative_url }}">{{ page.hero_button.title }}</a>
+    {%- endif %}
+  </div>
+</section>
+
+{{ content }}
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>News</h2>
+      <span class="section-head-bg" aria-hidden="true">News</span>
+      <a class="section-head-link" href="{{ '/news/' | relative_url }}">Übersicht</a>
+    </div>
+    <div class="news-grid news-grid-home">
+      {%- for post in site.posts limit: 4 -%}
+        {% include news-card.html post=post %}
+      {%- endfor -%}
+    </div>
+    <p class="center"><a class="btn-outline" href="{{ '/news/' | relative_url }}">Mehr anzeigen</a></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Termine</h2>
+      <span class="section-head-bg" aria-hidden="true">Termine</span>
+      <a class="section-head-link" href="{{ '/termine/' | relative_url }}">Übersicht</a>
+    </div>
+    {% include termine-list.html upcoming=true limit=6 %}
+  </div>
+</section>

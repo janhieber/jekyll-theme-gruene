@@ -1,0 +1,14 @@
+{%- assign t = include.termin -%}
+<li class="termin">
+  <a href="{{ t.url | relative_url }}">
+    <div class="termin-date">
+      <span class="day">{{ t.datum | date: "%d" }}</span>
+      <span class="month">{% include date-de.html date=t.datum format="month" %}</span>
+      <span class="year">{{ t.datum | date: "%Y" }}</span>
+    </div>
+    <div class="termin-info">
+      <h3>{{ t.title }}</h3>
+      <p>{{ t.datum | date: "%H:%M" }} Uhr{% if t.ort %} – {{ t.ort }}{% endif %}</p>
+    </div>
+  </a>
+</li>

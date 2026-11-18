@@ -1,0 +1,33 @@
+{%- assign nav = site.data.navigation | default: site.navigation -%}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="{{ '/' | relative_url }}">
+      {%- if site.logo -%}
+      <img class="logo-img" src="{{ site.logo | relative_url }}" alt="" width="80" height="80">
+      {%- endif -%}
+      <span class="logo-text">
+        <span class="logo-title">{{ site.title }}</span>
+        {%- if site.subtitle -%}<span class="logo-tagline"><strong>{{ site.subtitle }}</strong></span>{%- endif -%}
+      </span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+
+    <nav class="nav-main" aria-label="Hauptnavigation">
+      {%- for item in nav.main -%}
+        <a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} class="active"{% endif %}>{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+
+  {%- if nav.secondary -%}
+  <nav class="nav-secondary" aria-label="Unternavigation">
+    <div class="container">
+      {%- for item in nav.secondary -%}
+        <a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} class="active"{% endif %}>{{ item.title }}</a>
+      {%- endfor -%}
+    </div>
+  </nav>
+  {%- endif -%}
+</header>
