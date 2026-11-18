@@ -1,10 +1,16 @@
 # gruene-theme
 
+> [!CAUTION]
+> Dieses Theme ist nur ein mit KI erstelltes Konzept. Es ist weder richtig getestet noch fertig für den Produktiveinsatz. Benutzung auf eigene Gefahr!
+
 Ein schlichtes Jekyll-Theme für Orts- und Kreisverbände – mit News und Terminen auf der Startseite.
 
 > **Inoffiziell.** Dieses Theme ist kein offizielles Angebot von Bündnis 90/Die Grünen.
 > Logo, Schriften (GrueneType, GrueneSans) und Bilder sind **nicht** enthalten und
 > müssen von jedem Verband selbst eingebunden werden (Lizenz beim Landes-/Bundesverband erfragen).
+
+## Mitmachen
+Du kannst gerne Änderungen via Pull Request einreichen!
 
 ## Einbinden (als Git-Submodule)
 
