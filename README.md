@@ -23,7 +23,7 @@ gem "jekyll-theme-gruene", path: "_theme"
 `_config.yml`:
 
 ```yaml
-theme: gruene-theme
+theme: jekyll-theme-gruene
 title: Ortsverband Musterstadt
 subtitle: Bündnis 90/Die Grünen
 description: "Website des Ortsverbands Musterstadt"
